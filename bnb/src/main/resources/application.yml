@@ -1,0 +1,35 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      console.settings.trace: false
+      spring.h2.console.settings.web-allow-others: false
+
+  datasource:
+    url: jdbc:h2:tcp://localhost:9092/~/h2databases/BookingEventStore
+    username: sa
+    password: sa
+    driverClassname: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties.hibernate.jdbc.lob.on_contextual_creation: true
+    show-sql: true
+    hibernate.ddl-auto: update
+    hibernate.dialect: org.hibernate.dialect.H2Dialect
+    hibernate.use-new-id-generator-mappings: false
+
+queryDb:
+  datasource:
+    url: jdbc:h2:tcp://localhost:9092/~/h2databases/BookingQuery
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect
+      show-sql: true
+      use-new-id-generator-mappings: false
