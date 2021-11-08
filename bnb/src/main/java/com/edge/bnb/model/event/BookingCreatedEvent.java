@@ -7,7 +7,8 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Data @Setter
+@Data
+@Setter
 public class BookingCreatedEvent {
     @NotNull UUID bookingId;
     @NotNull UUID hotelId;

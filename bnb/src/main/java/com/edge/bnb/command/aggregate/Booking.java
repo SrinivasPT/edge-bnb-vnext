@@ -15,7 +15,9 @@ import java.util.UUID;
 
 import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
-@Slf4j @Data @Aggregate
+@Slf4j
+@Data
+@Aggregate
 public class Booking {
 
     @AggregateIdentifier
@@ -25,18 +27,19 @@ public class Booking {
     private LocalDateTime fromDate;
     private LocalDateTime toDate;
 
-    public Booking(){ }
+    public Booking() {
+    }
 
     // Note: @EventHandler annotation is removed from here as a separate command handler is created.
-    public void handle (AddBookingCommand command){
-        final BookingMapper mapper = Mappers.getMapper(BookingMapper.class );
+    public void handle(AddBookingCommand command) {
+        final BookingMapper mapper = Mappers.getMapper(BookingMapper.class);
         log.info("BookingAggregate::AddBookingCommand: In the Command Handler ".concat(command.toString()));
         apply(mapper.toEvent(command));
     }
 
     @EventSourcingHandler
-    protected void on(BookingCreatedEvent event){
-        final BookingMapper mapper = Mappers.getMapper(BookingMapper.class );
+    protected void on(BookingCreatedEvent event) {
+        final BookingMapper mapper = Mappers.getMapper(BookingMapper.class);
         log.info("BookingAggregate::BookingCreatedEventHandler: ".concat(event.toString()));
         mapper.toAggregate(event, this);
     }

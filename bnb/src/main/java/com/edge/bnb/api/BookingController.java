@@ -1,5 +1,6 @@
 package com.edge.bnb.api;
 
+
 import com.edge.bnb.model.command.AddBookingCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;

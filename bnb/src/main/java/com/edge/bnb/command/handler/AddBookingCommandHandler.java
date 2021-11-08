@@ -1,5 +1,6 @@
 package com.edge.bnb.command.handler;
 
+
 import com.edge.bnb.command.aggregate.Booking;
 import com.edge.bnb.model.command.AddBookingCommand;
 import com.edge.bnb.model.mappers.BookingMapper;
