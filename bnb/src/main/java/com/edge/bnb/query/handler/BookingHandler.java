@@ -9,7 +9,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
 
 @Component
-@ProcessingGroup("booking")
+@ProcessingGroup("booking-group")
 public class BookingHandler {
     private final BookingEntityRepository repository;
 

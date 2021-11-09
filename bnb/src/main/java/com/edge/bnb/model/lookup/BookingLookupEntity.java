@@ -1,4 +1,4 @@
-package com.edge.bnb.model.entity;
+package com.edge.bnb.model.lookup;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class BookingEntity {
+public class BookingLookupEntity {
     @Id
     private UUID bookingId;
     private UUID hotelId;

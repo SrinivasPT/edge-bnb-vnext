@@ -1,5 +1,6 @@
 package com.edge.bnb.model.command;
 
+import com.edge.bnb.core.base.BaseCommand;
 import lombok.Data;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 @Data
 @Setter
-public class AddBookingCommand {
+public class AddBookingCommand extends BaseCommand {
     UUID bookingId;
     @NotNull UUID hotelId;
     @NotNull UUID customerId;

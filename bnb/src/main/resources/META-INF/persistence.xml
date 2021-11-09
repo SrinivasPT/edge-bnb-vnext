@@ -5,6 +5,7 @@
         <class>org.axonframework.eventhandling.tokenstore.jpa.TokenEntry</class>
         <class>org.axonframework.modelling.saga.repository.jpa.AssociationValueEntry</class>
         <class>org.axonframework.modelling.saga.repository.jpa.SagaEntry</class>
+        <class>com.edge.bnb.model.lookup.BookingLookupEntity</class>
     </persistence-unit>
 
     <persistence-unit name="appEntities" transaction-type="RESOURCE_LOCAL">

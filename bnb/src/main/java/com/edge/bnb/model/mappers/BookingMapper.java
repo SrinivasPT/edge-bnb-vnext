@@ -4,6 +4,7 @@ import com.edge.bnb.command.aggregate.Booking;
 import com.edge.bnb.model.command.AddBookingCommand;
 import com.edge.bnb.model.entity.BookingEntity;
 import com.edge.bnb.model.event.BookingCreatedEvent;
+import com.edge.bnb.model.lookup.BookingLookupEntity;
 import org.mapstruct.CollectionMappingStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -18,4 +19,6 @@ public interface BookingMapper {
     void toAggregate(BookingCreatedEvent event, @MappingTarget Booking booking);
 
     BookingEntity toEntity(BookingCreatedEvent event);
+
+    BookingLookupEntity toLookupEntity(BookingCreatedEvent event);
 }
