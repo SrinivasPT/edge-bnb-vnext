@@ -1,4 +1,4 @@
-package com.edge.bnb.command.repository;
+package com.edge.bnb.core.repository;
 
 import com.edge.bnb.model.lookup.BookingLookupEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

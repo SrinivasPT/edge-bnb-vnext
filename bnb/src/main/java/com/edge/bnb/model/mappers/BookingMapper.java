@@ -8,6 +8,7 @@ import com.edge.bnb.model.lookup.BookingLookupEntity;
 import org.mapstruct.CollectionMappingStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
+import org.springframework.context.annotation.Bean;
 
 @Mapper(componentModel = "spring",
         collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED)

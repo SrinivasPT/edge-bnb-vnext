@@ -12,10 +12,9 @@ import org.axonframework.serialization.Serializer;
 import org.axonframework.spring.config.AxonConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -26,6 +25,13 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
+// Note: This missing @EnableJpaRepositories troubled me a lot.
+@EnableJpaRepositories(basePackages = "com.edge.bnb.core.repository",
+        entityManagerFactoryRef = "entityManagerFactory",
+        transactionManagerRef = "jpaTransactionManager",
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ASPECTJ,
+                pattern = "org.axonframework.eventsourcing.eventstore.jpa.*")
+)
 public class AxonStorageConfig {
     @Autowired
     private Environment environment;

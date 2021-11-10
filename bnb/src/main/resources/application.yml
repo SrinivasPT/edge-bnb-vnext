@@ -34,8 +34,8 @@ queryDb:
       show-sql: false
       use-new-id-generator-mappings: false
 
-#axon:
-#  eventhandling:
-#    processors:
-#      booking-group:
-#        mode: subscribing
+axon:
+  eventhandling:
+    processors:
+      booking-group:
+        mode: subscribing
